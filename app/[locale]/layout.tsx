@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import localFont from "next/font/local";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -20,18 +19,6 @@ const geistMono = Geist_Mono({
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const aeonikLightBody = localFont({
-  variable: "--font-body",
-  src: [{ path: "../../public/fonts/aeonik/Aeonik-Light.ttf", weight: "300", style: "normal" }],
-  display: "swap",
-});
-
-const aeonikLightDisplay = localFont({
-  variable: "--font-display",
-  src: [{ path: "../../public/fonts/aeonik/Aeonik-Light.ttf", weight: "300", style: "normal" }],
   display: "swap",
 });
 
@@ -62,7 +49,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${aeonikLightBody.variable} ${aeonikLightDisplay.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <SiteNavbar locale={locale} />
