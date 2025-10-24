@@ -295,7 +295,7 @@ function About() {
                   <div className="relative w-full h-full flex items-center justify-center px-8">
                     <div className="grid grid-cols-2 gap-6 w-full max-w-xl">
                       {[
-                        { title: 'Infraestructura', desc: 'Diseño y optimización de centros de datos', years: '15+ años', color: '#515a73' },
+                        { title: 'Infraestructura', desc: 'Diseño y optimización de centros de datos', years: '7 años', color: '#515a73' },
                         { title: 'Cloud GCP', desc: 'Migración y gestión en Google Cloud', years: '6 proyectos', color: '#3b82f6' },
                         { title: 'IA & Analytics', desc: 'Modelos predictivos y dashboards', years: 'En desarrollo', color: '#10b981' },
                         { title: 'Software Factory', desc: 'ERP personalizado para 10 clientes activos', years: '10 clientes', color: '#d9667b' },
