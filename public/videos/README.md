@@ -1,0 +1,1 @@
+Videos estáticos para el sitio. Sube aquí hero.mp4 y hero-fallback.jpg

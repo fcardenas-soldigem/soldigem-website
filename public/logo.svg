@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <rect width="256" height="256" rx="24" fill="#0B1220"/>
+  <!-- Triángulos inspirados en el isotipo compartido -->
+  <path d="M116 128 76 72l72 16-32 40Z" fill="#d9667b"/>
+  <path d="M124 124 68 92l28 64 28-32Z" fill="#263659"/>
+  <path d="M140 132 124 212l44-76-28-4Z" fill="#263659"/>
+  <path d="M156 116 212 84l-32 56-24-24Z" fill="#263659"/>
+</svg>
+
