@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Soldigem — Tecnología que libera tu negocio",
   description:
     "Optimizamos la gestión de activos, infraestructura y procesos TI con soluciones inteligentes basadas en datos e inteligencia artificial.",
-  metadataBase: new URL("https://www.soldigem.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://soldigem-website-92oa.vercel.app"),
 };
 
 async function getMessages(locale: string) {
