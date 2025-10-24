@@ -72,13 +72,13 @@ function Navbar({ active }: { active: string }) {
   }, []);
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-colors ${solid ? "bg-[#0B1220]/90 backdrop-blur border-b border-border" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link href="#hero" className="flex items-center">
-          <Image src="/soldigemnamewhite.png" alt="Soldigem" width={150} height={40} className="h-10 w-auto" />
+          <Image src="/soldigemnamewhite.png" alt="Soldigem" width={120} height={32} className="h-8 w-auto" />
         </Link>
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-6">
           {sections.map((s) => (
-            <a key={s.id} href={`#${s.id}`} className={`text-lg font-medium transition-colors ${active === s.id ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
+            <a key={s.id} href={`#${s.id}`} className={`text-sm font-medium transition-colors ${active === s.id ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
               {s.label}
             </a>
           ))}
@@ -119,7 +119,7 @@ function Hero() {
     };
   }, []);
   return (
-    <section id="hero" className="relative h-[100svh] flex items-center justify-center overflow-hidden scroll-mt-24 md:scroll-mt-28">
+    <section id="hero" className="relative h-[100svh] flex items-center justify-center overflow-hidden scroll-mt-16">
       {/* Fondo: video + overlay oscuro */}
       <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay muted playsInline preload="metadata" poster="/logo.svg">
         <source src="/A_cinematic_abstract_202509081700_z7rkh.mp4?v=2" type="video/mp4" />
@@ -149,18 +149,18 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur mb-6"
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-[#d9667b]" />
+          <span className="inline-block h-2 w-2 rounded-full bg-[#d9667b] animate-pulse" />
           Nuevo: Agentes de IA para ProcureSmart
-          <Link href="#services" className="text-[#d9667b] hover:text-[#bf8969]">Ver más</Link>
+          <Link href="#services" className="text-[#d9667b] hover:text-[#bf8969] transition-colors">Ver más</Link>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="mt-4 text-4xl md:text-6xl font-semibold bg-gradient-to-br from-[#d9667b] via-[#515a73] to-[#263659] bg-clip-text text-transparent font-display"
+          className="text-4xl md:text-6xl font-semibold bg-gradient-to-br from-[#d9667b] via-[#515a73] to-[#263659] bg-clip-text text-transparent font-display"
         >
           Tecnología que libera tu negocio.
         </motion.h1>
@@ -202,7 +202,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 px-6 md:px-8 bg-gradient-to-b from-black to-[#0a1929] scroll-mt-24 md:scroll-mt-28 overflow-hidden">
+    <section id="about" className="relative py-24 px-6 md:px-8 bg-gradient-to-b from-black to-[#0a1929] scroll-mt-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Quiénes somos?</h2>
@@ -462,7 +462,7 @@ function Stats() {
   );
 
   return (
-    <section id="stats" className="py-20 px-6 md:px-8 scroll-mt-24 md:scroll-mt-28">
+    <section id="stats" className="py-20 px-6 md:px-8 scroll-mt-16">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
         <Stat label="ahorrados a clientes">
           <CountUp end={500} prefix="+S/" suffix="k" />
@@ -518,7 +518,7 @@ function Services() {
   };
 
   return (
-    <section id="services" className="relative py-24 px-6 md:px-8 overflow-hidden scroll-mt-24 md:scroll-mt-28">
+    <section id="services" className="relative py-24 px-6 md:px-8 overflow-hidden scroll-mt-16">
       {/* Fondo con gradiente sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#d9667b]/10 via-black to-[#515a73]/10" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)]" />
@@ -660,7 +660,7 @@ function Why() {
   const Icon = caso.icon;
 
   return (
-    <section id="why" className="py-20 px-6 md:px-8 scroll-mt-24 md:scroll-mt-28 bg-gradient-to-b from-black to-[#0a1929]">
+    <section id="why" className="py-20 px-6 md:px-8 scroll-mt-16 bg-gradient-to-b from-black to-[#0a1929]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Por qué elegirnos?</h2>
@@ -777,7 +777,7 @@ function Why() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 md:px-8 scroll-mt-24 md:scroll-mt-28">
+    <section id="contact" className="py-24 px-6 md:px-8 scroll-mt-16">
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold">Hablemos</h2>
         <p className="text-muted-foreground mt-2">Agenda una demo o solicita una propuesta.</p>
@@ -843,7 +843,7 @@ export function ContactForm() {
 
 function Links() {
   return (
-    <section id="links" className="py-16 px-6 md:px-8 bg-card/40 scroll-mt-24 md:scroll-mt-28">
+    <section id="links" className="py-16 px-6 md:px-8 bg-card/40 scroll-mt-16">
       <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
         <Link className="underline" href="https://www.linkedin.com" target="_blank">LinkedIn</Link>
         <Link className="underline" href="https://wa.me/51999999999" target="_blank">WhatsApp</Link>
