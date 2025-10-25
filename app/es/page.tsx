@@ -49,6 +49,7 @@ export default function SoldigemES() {
       <JsonLd />
       <Navbar active={active} />
       <Hero />
+      <Clients />
       <About />
       <Stats />
       <Services />
@@ -164,17 +165,30 @@ function Hero() {
         >
           Tecnología que libera tu negocio.
         </motion.h1>
+      </div>
+    </section>
+  );
+}
 
-        {/* Logos de confianza */}
+function Clients() {
+  return (
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-black to-[#0a1929]">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-8 sm:mt-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8 sm:mb-12"
         >
-          <p className="text-xs sm:text-sm uppercase tracking-wider text-white/60">Confiado por equipos líderes</p>
-          <ClientsMarquee />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light mb-3 sm:mb-4">
+            Confiado por equipos líderes
+          </h2>
+          <p className="text-white/60 text-sm sm:text-base max-w-2xl mx-auto">
+            Empresas que confían en nuestras soluciones tecnológicas
+          </p>
         </motion.div>
+          <ClientsMarquee />
       </div>
     </section>
   );
