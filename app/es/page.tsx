@@ -144,23 +144,23 @@ function Hero() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur mb-6"
+          className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 sm:px-4 py-1.5 text-xs sm:text-sm text-white/80 backdrop-blur mb-6"
         >
           <span className="inline-block h-2 w-2 rounded-full bg-[#d9667b] animate-pulse" />
-          Nuevo: Agentes de IA para ProcureSmart
-          <Link href="#services" className="text-[#d9667b] hover:text-[#bf8969] transition-colors">Ver más</Link>
+          <span className="text-center">Nuevo: Agentes de IA para ProcureSmart</span>
+          <Link href="#services" className="text-[#d9667b] hover:text-[#bf8969] transition-colors whitespace-nowrap">Ver más</Link>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-4xl md:text-6xl font-semibold bg-gradient-to-br from-[#d9667b] via-[#515a73] to-[#263659] bg-clip-text text-transparent font-display"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold bg-gradient-to-br from-[#d9667b] via-[#515a73] to-[#263659] bg-clip-text text-transparent font-display px-2"
         >
           Tecnología que libera tu negocio.
         </motion.h1>
@@ -170,9 +170,9 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-10"
+          className="mt-8 sm:mt-10"
         >
-          <p className="text-xs uppercase tracking-wider text-white/60">Confiado por equipos líderes</p>
+          <p className="text-xs sm:text-sm uppercase tracking-wider text-white/60">Confiado por equipos líderes</p>
           <ClientsMarquee />
         </motion.div>
       </div>
@@ -202,18 +202,18 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 px-6 md:px-8 bg-gradient-to-b from-black to-[#0a1929] scroll-mt-16 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-black to-[#0a1929] scroll-mt-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Quiénes somos?</h2>
-          <p className="mt-4 text-white/60 text-lg max-w-3xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Quiénes somos?</h2>
+          <p className="mt-3 sm:mt-4 text-white/60 text-base sm:text-lg max-w-3xl mx-auto px-4">
             Somos un partner tecnológico que combina experiencia bancaria, ingeniería y analítica para acelerar proyectos TI con foco en resultados.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contenido izquierdo - Tabs */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
@@ -221,22 +221,22 @@ function About() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className={`w-full text-left p-6 rounded-xl border transition-all ${
+                className={`w-full text-left p-4 sm:p-6 rounded-xl border transition-all ${
                   activeTab === tab.id
                     ? 'border-[#d9667b]/50 bg-gradient-to-br from-[#d9667b]/10 to-transparent'
                     : 'border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-white/20'
                 }`}
               >
-                <h3 className={`font-semibold text-lg mb-2 ${activeTab === tab.id ? 'text-[#d9667b]' : 'text-white/90'}`}>
+                <h3 className={`font-semibold text-base sm:text-lg mb-1 sm:mb-2 ${activeTab === tab.id ? 'text-[#d9667b]' : 'text-white/90'}`}>
                   {tab.title}
                 </h3>
-                <p className="text-sm text-white/60 leading-relaxed">{tab.description}</p>
+                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">{tab.description}</p>
               </motion.button>
             ))}
           </div>
 
           {/* Visualización 3D derecha */}
-          <div className="relative hidden lg:block">
+          <div className="relative lg:block">
             <div className="relative w-full h-[600px]" style={{ perspective: "1500px" }}>
               <motion.div
                 key={activeTab}
@@ -292,8 +292,8 @@ function About() {
 
                 {/* EXPERIENCIA - Grid de Competencias */}
                 {activeTab === 'experiencia' && (
-                  <div className="relative w-full h-full flex items-center justify-center px-8">
-                    <div className="grid grid-cols-2 gap-6 w-full max-w-xl">
+                  <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-xl">
                       {[
                         { title: 'Infraestructura', desc: 'Diseño y optimización de centros de datos', years: '7 años', color: '#515a73' },
                         { title: 'Cloud GCP', desc: 'Migración y gestión en Google Cloud', years: '6 proyectos', color: '#3b82f6' },
@@ -462,8 +462,8 @@ function Stats() {
   );
 
   return (
-    <section id="stats" className="py-20 px-6 md:px-8 scroll-mt-16">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section id="stats" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 scroll-mt-16">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         <Stat label="ahorrados a clientes">
           <CountUp end={500} prefix="+S/" suffix="k" />
         </Stat>
@@ -518,24 +518,24 @@ function Services() {
   };
 
   return (
-    <section id="services" className="relative py-24 px-6 md:px-8 overflow-hidden scroll-mt-16">
+    <section id="services" className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden scroll-mt-16">
       {/* Fondo con gradiente sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#d9667b]/10 via-black to-[#515a73]/10" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)]" />
       
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-3">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-2 sm:mb-3">
             Portafolio de Soluciones
           </h2>
-          <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-white/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Descubre nuestro catálogo completo de servicios especializados
           </p>
         </div>
         
         {/* Grid de servicios - estilo columnas */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
           {items.map((s) => {
             const Icon = s.icon;
             return (
@@ -660,20 +660,20 @@ function Why() {
   const Icon = caso.icon;
 
   return (
-    <section id="why" className="py-20 px-6 md:px-8 scroll-mt-16 bg-gradient-to-b from-black to-[#0a1929]">
+    <section id="why" className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 scroll-mt-16 bg-gradient-to-b from-black to-[#0a1929]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Por qué elegirnos?</h2>
-          <p className="mt-3 text-white/50 text-base">Desafío → Solución → Impacto</p>
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Por qué elegirnos?</h2>
+          <p className="mt-2 sm:mt-3 text-white/50 text-sm sm:text-base">Desafío → Solución → Impacto</p>
         </div>
 
         {/* Título del caso actual */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10">
-            <Icon className="w-6 h-6 text-[#d9667b]" strokeWidth={1.5} />
-            <h3 className="text-lg md:text-xl font-medium text-white/90">{caso.t}</h3>
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/5 border border-white/10">
+            <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#d9667b] flex-shrink-0" strokeWidth={1.5} />
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white/90 text-left">{caso.t}</h3>
           </div>
-          <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="mt-3 sm:mt-4 flex items-center justify-center gap-2">
             <span className="text-xs text-white/40">
               {currentCase + 1} de {cases.length}
             </span>
@@ -687,7 +687,7 @@ function Why() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.4 }}
-          className="grid md:grid-cols-3 gap-6 mb-10"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-10"
         >
           {/* Card 1: Desafío */}
           <div className="relative group">
@@ -777,9 +777,9 @@ function Why() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 px-6 md:px-8 scroll-mt-16">
-      <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold">Hablemos</h2>
+    <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 scroll-mt-16">
+      <div className="max-w-xl mx-auto text-center px-2">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">Hablemos</h2>
         <p className="text-muted-foreground mt-2">Agenda una demo o solicita una propuesta.</p>
         <div className="mt-8">
           <ContactForm />
@@ -843,11 +843,11 @@ export function ContactForm() {
 
 function Links() {
   return (
-    <section id="links" className="py-16 px-6 md:px-8 bg-card/40 scroll-mt-16">
-      <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
-        <Link className="underline" href="https://www.linkedin.com" target="_blank">LinkedIn</Link>
-        <Link className="underline" href="https://wa.me/51999999999" target="_blank">WhatsApp</Link>
-        <Link className="underline" href="https://blog.soldigem.com" target="_blank">Blog</Link>
+    <section id="links" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 bg-card/40 scroll-mt-16">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
+        <Link className="underline text-sm sm:text-base" href="https://www.linkedin.com" target="_blank">LinkedIn</Link>
+        <Link className="underline text-sm sm:text-base" href="https://wa.me/51999999999" target="_blank">WhatsApp</Link>
+        <Link className="underline text-sm sm:text-base" href="https://blog.soldigem.com" target="_blank">Blog</Link>
       </div>
     </section>
   );
@@ -855,15 +855,15 @@ function Links() {
 
 function Footer() {
   return (
-    <footer className="py-10 px-6 md:px-8 border-t">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Image src="/isotiposdg.png" alt="Soldigem" width={32} height={32} className="h-8 w-8" />
-          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()} Soldigem. Todos los derechos reservados.</span>
+    <footer className="py-8 sm:py-10 px-4 sm:px-6 md:px-8 border-t">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Image src="/isotiposdg.png" alt="Soldigem" width={32} height={32} className="h-7 w-7 sm:h-8 sm:w-8" />
+          <span className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">© {new Date().getFullYear()} Soldigem. Todos los derechos reservados.</span>
         </div>
-        <div className="flex items-center gap-4 text-sm">
-          <Link href="#privacy" className="text-muted-foreground">Legal</Link>
-          <Link href="#terms" className="text-muted-foreground">Términos</Link>
+        <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm">
+          <Link href="#privacy" className="text-muted-foreground hover:text-foreground transition-colors">Legal</Link>
+          <Link href="#terms" className="text-muted-foreground hover:text-foreground transition-colors">Términos</Link>
         </div>
       </div>
     </footer>
