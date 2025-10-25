@@ -250,25 +250,25 @@ function About() {
           </div>
 
           {/* Visualización 3D derecha */}
-          <div className="relative lg:block">
-            <div className="relative w-full h-[600px]" style={{ perspective: "1500px" }}>
+          <div className="relative lg:block mt-8 lg:mt-0">
+            <div className="relative w-full min-h-[500px] lg:h-[600px]" style={{ perspective: "1500px" }}>
               <motion.div
                 key={activeTab}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute inset-0"
+                className="relative w-full h-full"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* TRAYECTORIA - Timeline 2D Vertical */}
                 {activeTab === 'trayectoria' && (
-                  <div className="relative w-full h-full flex items-center justify-center px-8">
+                  <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-8 py-8">
                     <div className="relative w-full max-w-md">
                       {/* Línea vertical del timeline */}
-                      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#d9667b]/20 via-[#d9667b] to-[#d9667b]/20" />
+                      <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#d9667b]/20 via-[#d9667b] to-[#d9667b]/20" />
                       
                       {/* Hitos del timeline */}
-                      <div className="space-y-12 py-8">
+                      <div className="space-y-8 sm:space-y-12">
                         {[
                           { year: '2014', title: 'Fundación', desc: 'Inicio de operaciones' },
                           { year: '2016', title: 'Primer proyecto bancario', desc: 'Expansión al sector financiero' },
@@ -281,20 +281,20 @@ function About() {
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.15, duration: 0.5 }}
-                            className="relative flex items-start gap-6"
+                            className="relative flex items-start gap-4 sm:gap-6"
                           >
                             {/* Nodo */}
                             <div className="relative z-10 flex-shrink-0">
-                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#d9667b] to-[#bf8969] border-4 border-[#0a1929] shadow-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-sm">{milestone.year}</span>
+                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#d9667b] to-[#bf8969] border-2 sm:border-4 border-[#0a1929] shadow-xl flex items-center justify-center">
+                                <span className="text-white font-bold text-xs sm:text-sm">{milestone.year}</span>
                               </div>
                             </div>
                             
                             {/* Contenido */}
-                            <div className="flex-1 pt-2">
-                              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-[#d9667b]/40 transition-all">
-                                <h4 className="text-white font-semibold text-base mb-1">{milestone.title}</h4>
-                                <p className="text-white/60 text-sm">{milestone.desc}</p>
+                            <div className="flex-1 pt-1 sm:pt-2">
+                              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-3 sm:p-4 hover:border-[#d9667b]/40 transition-all">
+                                <h4 className="text-white font-semibold text-sm sm:text-base mb-1">{milestone.title}</h4>
+                                <p className="text-white/60 text-xs sm:text-sm">{milestone.desc}</p>
                               </div>
                             </div>
                           </motion.div>
@@ -306,7 +306,7 @@ function About() {
 
                 {/* EXPERIENCIA - Grid de Competencias */}
                 {activeTab === 'experiencia' && (
-                  <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-8">
+                  <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-8 py-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-xl">
                       {[
                         { title: 'Infraestructura', desc: 'Diseño y optimización de centros de datos', years: '7 años', color: '#515a73' },
@@ -367,34 +367,32 @@ function About() {
 
                 {/* ESCALABILIDAD - Pirámide con Base Abajo */}
                 {activeTab === 'escalabilidad' && (
-                  <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-8 py-8">
                     <div className="relative w-full max-w-lg">
                       {/* Niveles de la pirámide - del más pequeño (arriba) al más grande (abajo) */}
-                      <div className="flex flex-col items-center gap-6 py-12">
+                      <div className="flex flex-col items-center gap-4 sm:gap-6">
                         {[
-                          { label: 'Automatización Total', width: 280, color: '#10b981', level: 4 },
-                          { label: 'Modelos Replicables', width: 340, color: '#3b82f6', level: 3 },
-                          { label: 'Integración de Datos', width: 400, color: '#d9667b', level: 2 },
-                          { label: 'Infraestructura Base', width: 460, color: '#515a73', level: 1 },
+                          { label: 'Automatización Total', widthClass: 'w-[60%] sm:w-[280px]', color: '#10b981', level: 4 },
+                          { label: 'Modelos Replicables', widthClass: 'w-[75%] sm:w-[340px]', color: '#3b82f6', level: 3 },
+                          { label: 'Integración de Datos', widthClass: 'w-[90%] sm:w-[400px]', color: '#d9667b', level: 2 },
+                          { label: 'Infraestructura Base', widthClass: 'w-full sm:w-[460px]', color: '#515a73', level: 1 },
                         ].map((level, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 30, scaleX: 0 }}
                             animate={{ opacity: 1, y: 0, scaleX: 1 }}
                             transition={{ delay: idx * 0.15, duration: 0.6, type: "spring" }}
-                            className="relative rounded-xl border"
+                            className={`relative rounded-xl border h-16 sm:h-[70px] ${level.widthClass}`}
                             style={{
-                              width: `${level.width}px`,
-                              height: '70px',
                               background: `linear-gradient(135deg, ${level.color}25, ${level.color}08)`,
                               borderColor: `${level.color}50`,
                               boxShadow: `0 8px 32px ${level.color}25`,
                             }}
                           >
-                            <div className="absolute inset-0 flex items-center justify-center gap-4">
+                            <div className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-4 px-2">
                               {/* Número de nivel */}
                               <div 
-                                className="w-10 h-10 rounded-full flex items-center justify-center text-base font-bold flex-shrink-0"
+                                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm sm:text-base font-bold flex-shrink-0"
                                 style={{
                                   background: level.color,
                                   color: '#000',
@@ -405,7 +403,7 @@ function About() {
                               
                               {/* Etiqueta */}
                               <span 
-                                className="text-base font-bold text-center"
+                                className="text-xs sm:text-base font-bold text-center"
                                 style={{ color: level.color }}
                               >
                                 {level.label}
