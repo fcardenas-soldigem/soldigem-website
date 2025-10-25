@@ -791,8 +791,7 @@ function Contact() {
   return (
     <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 scroll-mt-16">
       <div className="max-w-xl mx-auto text-center px-2">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">Hablemos</h2>
-        <p className="text-muted-foreground mt-2">Agenda una demo o solicita una propuesta.</p>
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">¿Listo para transformar tu negocio?</h2>
         <div className="mt-8">
           <ContactForm />
         </div>
@@ -847,7 +846,7 @@ export function ContactForm() {
         <textarea {...register("mensaje")} placeholder="Mensaje" className="w-full px-3 py-2 rounded bg-background border min-h-28" />
         {errors.mensaje && <p className="text-xs text-red-400 mt-1">{errors.mensaje.message}</p>}
       </div>
-      <Button type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando…" : "Agendar demo"}</Button>
+      <Button type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando…" : "Quiero transformar mi negocio"}</Button>
       {sent && <p className="text-sm text-green-400">Mensaje enviado. Te contactaremos pronto.</p>}
     </form>
   );
