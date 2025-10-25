@@ -75,12 +75,12 @@ export function ClientsMarquee() {
   const list = images ?? defaults;
   const track = list.concat(list);
   return (
-    <div className="mt-6 relative overflow-hidden min-h-40">
+    <div className="mt-6 relative overflow-hidden min-h-28">
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: [0, -800] }}
         transition={{ repeat: Infinity, duration: 24, ease: "linear" }}
-        className="flex items-center gap-16 opacity-95 hover:[animation-play-state:paused]"
+        className="flex items-center gap-12 opacity-95 hover:[animation-play-state:paused]"
       >
         {track.map((p, i) => (
           <img
@@ -88,7 +88,7 @@ export function ClientsMarquee() {
             src={p.src}
             alt={p.alt || "cliente"}
             loading="lazy"
-            className="h-32 md:h-36 w-auto object-contain max-w-xs"
+            className="h-20 md:h-24 w-auto object-contain max-w-[200px]"
             style={{ filter: "drop-shadow(0 0 12px rgba(255,255,255,0.06))" }}
           />
         ))}
