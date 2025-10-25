@@ -172,7 +172,7 @@ function Hero() {
 
 function Clients() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-black to-[#0a1929]">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -216,7 +216,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-black to-[#0a1929] scroll-mt-16 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-black scroll-mt-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Quiénes somos?</h2>
@@ -285,7 +285,7 @@ function About() {
                           >
                             {/* Nodo */}
                             <div className="relative z-10 flex-shrink-0">
-                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#d9667b] to-[#bf8969] border-2 sm:border-4 border-[#0a1929] shadow-xl flex items-center justify-center">
+                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#d9667b] to-[#bf8969] border-2 sm:border-4 border-black shadow-xl flex items-center justify-center">
                                 <span className="text-white font-bold text-xs sm:text-sm">{milestone.year}</span>
                               </div>
                             </div>
@@ -672,7 +672,7 @@ function Why() {
   const Icon = caso.icon;
 
   return (
-    <section id="why" className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 scroll-mt-16 bg-gradient-to-b from-black to-[#0a1929]">
+    <section id="why" className="py-16 sm:py-20 px-4 sm:px-6 md:px-8 scroll-mt-16 bg-black">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-10 md:mb-12 px-2">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Por qué elegirnos?</h2>
@@ -792,6 +792,7 @@ function Contact() {
     <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 scroll-mt-16">
       <div className="max-w-xl mx-auto text-center px-2">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold">¿Listo para transformar tu negocio?</h2>
+        <p className="text-muted-foreground mt-3 text-base sm:text-lg">El cambio empieza aquí</p>
         <div className="mt-8">
           <ContactForm />
         </div>
@@ -846,7 +847,7 @@ export function ContactForm() {
         <textarea {...register("mensaje")} placeholder="Mensaje" className="w-full px-3 py-2 rounded bg-background border min-h-28" />
         {errors.mensaje && <p className="text-xs text-red-400 mt-1">{errors.mensaje.message}</p>}
       </div>
-      <Button type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando…" : "Quiero transformar mi negocio"}</Button>
+      <Button type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando…" : "Empecemos"}</Button>
       {sent && <p className="text-sm text-green-400">Mensaje enviado. Te contactaremos pronto.</p>}
     </form>
   );
