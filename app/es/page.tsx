@@ -845,8 +845,8 @@ function Links() {
   return (
     <section id="links" className="py-12 sm:py-16 px-4 sm:px-6 md:px-8 bg-card/40 scroll-mt-16">
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
-        <Link className="underline text-sm sm:text-base" href="https://www.linkedin.com" target="_blank">LinkedIn</Link>
-        <Link className="underline text-sm sm:text-base" href="https://wa.me/51999999999" target="_blank">WhatsApp</Link>
+        <Link className="underline text-sm sm:text-base" href="https://linkedin.com/company/soldigem" target="_blank">LinkedIn</Link>
+        <Link className="underline text-sm sm:text-base" href="https://wa.me/51986705342" target="_blank">WhatsApp</Link>
         <Link className="underline text-sm sm:text-base" href="https://blog.soldigem.com" target="_blank">Blog</Link>
       </div>
     </section>
