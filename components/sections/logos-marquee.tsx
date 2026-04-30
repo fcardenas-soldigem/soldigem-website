@@ -1,12 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-// Usamos <img> nativo para evitar optimización y mostrar cualquier PNG/JPG local sin fricción
 import { useEffect, useState } from "react";
 
-export function LogosMarquee() {
-  const defaults: { src: string; alt: string }[] = [];
+type LogoItem = { src: string; alt: string };
 
-  const [images, setImages] = useState<{ src: string; alt: string }[] | null>(null);
+const EMPTY: LogoItem[] = [];
+
+export function LogosMarquee() {
+  const [images, setImages] = useState<LogoItem[] | null>(null);
+
   useEffect(() => {
     let mounted = true;
     const ts = Date.now();
@@ -14,15 +16,15 @@ export function LogosMarquee() {
       .then((r) => r.json())
       .then((data) => {
         if (!mounted) return;
-        setImages(Array.isArray(data?.images) && data.images.length > 0 ? data.images : defaults);
+        setImages(Array.isArray(data?.images) && data.images.length > 0 ? data.images : EMPTY);
       })
-      .catch(() => setImages(defaults));
+      .catch(() => setImages(EMPTY));
     return () => {
       mounted = false;
     };
   }, []);
 
-  const list = images ?? defaults;
+  const list = images ?? EMPTY;
   const track = list.concat(list);
   return (
     <section className="py-20">
@@ -36,6 +38,7 @@ export function LogosMarquee() {
             className="flex items-center gap-16 opacity-95 hover:[animation-play-state:paused]"
           >
             {track.map((p, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={`${p.src}-${i}`}
                 src={p.src}
@@ -55,8 +58,8 @@ export function LogosMarquee() {
 }
 
 export function ClientsMarquee() {
-  const defaults: { src: string; alt: string }[] = [];
-  const [images, setImages] = useState<{ src: string; alt: string }[] | null>(null);
+  const [images, setImages] = useState<LogoItem[] | null>(null);
+
   useEffect(() => {
     let mounted = true;
     const ts = Date.now();
@@ -64,15 +67,15 @@ export function ClientsMarquee() {
       .then((r) => r.json())
       .then((data) => {
         if (!mounted) return;
-        setImages(Array.isArray(data?.images) && data.images.length > 0 ? data.images : defaults);
+        setImages(Array.isArray(data?.images) && data.images.length > 0 ? data.images : EMPTY);
       })
-      .catch(() => setImages(defaults));
+      .catch(() => setImages(EMPTY));
     return () => {
       mounted = false;
     };
   }, []);
 
-  const list = images ?? defaults;
+  const list = images ?? EMPTY;
   const track = list.concat(list);
   return (
     <div className="mt-6 relative overflow-hidden min-h-28">
@@ -83,6 +86,7 @@ export function ClientsMarquee() {
         className="flex items-center gap-12 opacity-95 hover:[animation-play-state:paused]"
       >
         {track.map((p, i) => (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             key={`${p.src}-${i}`}
             src={p.src}
@@ -98,5 +102,3 @@ export function ClientsMarquee() {
     </div>
   );
 }
-
-
