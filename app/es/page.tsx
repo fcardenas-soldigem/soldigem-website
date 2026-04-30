@@ -219,10 +219,7 @@ function About() {
     <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-8 bg-black scroll-mt-16 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">¿Quiénes somos?</h2>
-          <p className="mt-3 sm:mt-4 text-white/60 text-base sm:text-lg max-w-3xl mx-auto px-4">
-            Somos un partner tecnológico que combina experiencia bancaria, ingeniería y analítica para acelerar proyectos TI con foco en resultados.
-          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-light">El futuro de tu industria empieza aquí.</h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
